@@ -1,61 +1,37 @@
-document.addEventListener("DOMContentLoaded", function () { /*roda só após o html carregar*/
-
-    const areaItems = document.querySelectorAll(".areas ul li"); /* tras as opçoes dentro da lista ul li*/
-    const logoSections = document.querySelectorAll(".logos section"); /* tras as imagens dasa logos*/
+document.addEventListener("DOMContentLoaded", function () {
+    const areaItems = document.querySelectorAll(".areas ul li");
+    const descricaoSections = document.querySelectorAll(".descricao section");
 
     areaItems.forEach(function (item) {
-
-        item.addEventListener("click", function () { /*quando um dos itens é clicado, a função é executada.*/
-
-            const targetId = this.getAttribute("data-target"); /*trouxe o valor de data target que coloquei nos itens html */
+        item.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target");
             const targetSection = document.getElementById(targetId);
 
-            
-            logoSections.forEach(function (section) {
-                section.style.display = "none";// Oculta todas as imagens quando uma área é selecionada
+            // Oculta todas as seções de descrição
+            descricaoSections.forEach(function (section) {
+                section.style.display = "none";
             });
 
-            
-            targetSection.style.display = "block";// Mostra apenas as imagens da área correspondente
+            // Mostra apenas a seção da área correspondente
+            targetSection.style.display = "block";
 
-           
+            // Remove a classe "active" de todos os itens da lista
             areaItems.forEach(function (li) {
-                li.classList.remove("active"); // Remove a classe "active" de todos os itens da lista
+                li.classList.remove("active");
             });
 
-           
-            this.classList.add("active"); // Adiciona a classe "active" apenas ao item clicado
+            // Adiciona a classe "active" apenas ao item clicado
+            this.classList.add("active");
         });
     });
 
-    // Oculta todas as imagens quando nenhuma área é selecionada
-    function hideAllImages() {
-        logoSections.forEach(function (section) {
-            section.style.display = "none";
-        });
-    }
-
-    // Verifica se há alguma área selecionada ao carregar a página
-    let areaSelected = false;
-    areaItems.forEach(function (item) {
-        if (item.classList.contains("active")) {
-            areaSelected = true;
-        }
+    descricaoSections.forEach(function (section) {
+        section.style.display = "none";
     });
-    if (!areaSelected) {
-        hideAllImages();
+
+    //Seleciona o Front-End por padrão ao carregar a página
+    const frontEndItem = document.querySelector('.areas ul li[data-target="front"]');
+    if (frontEndItem) {
+        frontEndItem.click();
     }
 });
-
-// AQUI O FRONTEND JA É SELECIONADO
-document.addEventListener('DOMContentLoaded', function () {
-    const areas = document.querySelectorAll('.tecnologias .areas ul li');
-
-    areas.forEach(area => {
-        area.addEventListener('click', function () {
-            areas.forEach(a => a.classList.remove('clicked'));
-            this.classList.add('clicked');
-        });
-    });
-});
-

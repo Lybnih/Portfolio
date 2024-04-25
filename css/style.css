@@ -77,14 +77,13 @@ header nav ul li{
     bottom: -5px; /*altura da linha*/
     left: 0;   /*inicia em 0*/
     width: 0; /*inicia em 0*/
-    height: 1px; /* espessura da linha */
+    height: 1px;
     background: linear-gradient(to right, transparent 0%, #B0E0E6 100%, transparent 100%); /*Configurei a opacidade da transição*/
     opacity: 0; /* Inicialmente transparente */
     transition: 300ms cubic-bezier(0.17, 0.67, 0.55, 1.20); /*configurei a transição*/
 }
 
 .menu_desktop ul li a:hover::after {
-    
     width: 100%; /* expandir a largura da linha ao passar o mouse */
     opacity: 1; 
 }
@@ -208,13 +207,12 @@ section.topo_site .flex{
 
 
 /* AQUI INICIA TECNOLOGIAS  */
-.tecnologias {
-    padding: 120px 15%;
-    margin-top: 260px; /* Defina a distância desejada entre a sessão de Tecnologias e o topo */
 
+.tecnologias {
+    padding: 120px 20%;
 }
 
-.tecnologias .flex{
+.tecnologias .interface .flex {
     align-items: flex-start;
     gap: 50px;
 }
@@ -227,65 +225,80 @@ section.topo_site .flex{
     text-align: left; 
 }
 
-
-.tecnologias .areas {
+/*areas*/
+.areas{
+    width: 225px;
     cursor: pointer;
 }
 
-.tecnologias .areas ul {
+.areas ul {
     list-style: none;
-    font-size: 17.6px;
-    color:#ffffff;
+    font-size: 1.1rem;
+    padding: 0;
 }
 
-.tecnologias .areas li {
-    padding: 15px;
-    text-align: center;
-    border-left: 2px solid #B10DC9;
-    transition: background-color border-left 0.5s ease;
-}
-
-
-.tecnologias .areas ul li.clicked,
-.tecnologias .areas ul li:hover {
-    background-color: #424242;
+.areas ul li.active{
+    background-color: #3d3d3d;
     border-left: 2px solid #00d2df;
+    font-weight: 600;
 }
 
-.tecnologias .areas {
-    width: 20%;
-    line-height: 24px;
+.areas li {
+    padding: 10px;
+    text-align: center;
+    border-left: 2px solid #B10DC9; 
+    transition: background-color 0.5s ease;
+    color: #ffffff;
 }
 
-.tecnologias .areas section {
+.areas ul li:hover {
+    background-color: #3d3d3d;
+}
+
+/*descricao*/
+.descricao {
+    width: 60%;
+    margin-left: 5rem;
+    position: relative;
+    line-height: 1.5rem;
+}
+
+.descricao .titulo{
+    color: #ffffff;
+}
+
+.descricao section {
     display: none;
 }
-
-
-.tecnologias .areas section.active {
+  
+.descricao section.active {
     display: block;
 }
 
-.tecnologias .areas section.active img {
-    display: block;
+.descricao section.active.show-right {
+    animation: 0.5s forwards show-right;
 }
 
-.tecnologias .areas section img {
-    display: none; /* Ocultar todas as imagens por padrão */
-    width: 100px; /* Definir largura das imagens */
-}
-.tecnologias .areas section.active h2{
-    display: block;
-    color: #fff; /* Altere a cor do texto conforme necessário */
-    font-size: 24px; /* Altere o tamanho da fonte conforme necessário */
-    margin-bottom: 20px; /* Adicione margem inferior conforme necessário */
+.descricao h2 {
+    font-size: 1.4rem;
+    display: inline-block;
 }
 
-.tecnologias .areas section.active.mostrar{
-animation: 0.5s forwards show-right;
+.descricao .img{
+    font-size: 0.95rem;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-weight: bold;
 }
 
-@keyframes mostrar {
+.texto {
+    margin: 2rem 0;
+    font-size: 0.85rem;
+    color: #f3f3f3 ;
+}
+
+@keyframes show-right {
     from {
       opacity: 0;
       transform: translate3d(-30px, 0, 0);
@@ -295,3 +308,30 @@ animation: 0.5s forwards show-right;
       transform: translate3d(0, 0, 0);
     }
   }
+
+  @keyframes show-down {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+
+
+.tecnologias .areas ul li.clicked,
+.tecnologias .areas ul li:hover {
+    background-color: #3d3d3d;
+    border-left: 2px solid #00d2df;
+}
+
+
+
+
+
+
+
+
