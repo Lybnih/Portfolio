@@ -1,0 +1,297 @@
+/* ESTILO GERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #181A1C;
+    height: 100vh;
+    margin: 0;
+}
+
+.interface{
+    max-width: 1500px; /*separando*/
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center; 
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 20px 4%;
+    position: fixed; /*vai descer junto*/
+    top: 0; /* fica no topo de inincio */
+    z-index: 1000; /*cima de outros elementos */
+    background-color: #272727;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(147, 88, 247, 1); /* Adicionei uma sombra ao cabeçalho para separá-lo do conteúdo */
+}
+
+
+header > .interface{
+    display: flex;
+    align-items:center;
+    justify-content: space-between; /*ficou separado*/
+    padding-right: 120px; 
+}
+
+header a{
+    text-decoration: none; /*tirei a linha abaixo dos nomes*/
+    font-size: 25px; 
+}
+
+header nav ul{
+    list-style-type: none; /*tirei os pontos da lista do menu*/
+    margin-right: 2px; /* Adição */
+}
+
+header nav ul li{
+    display: inline-block; /*deixei a lista do menu um do lado do outro*/
+    padding: 0 20px;
+}
+
+.menu_desktop {
+    flex: 1;
+    text-align: right; /*ALINHAdOS A DIREITA*/
+}
+
+/* AQUI VEM O SWITCH DE TEMA */
+
+/* AQUI ENCERRA O SWITCH DE TEMA  */  
+
+.menu_desktop ul li a {
+    position: relative;
+    text-decoration: none; /*adicionei a linha pro efeito*/
+    color: #ffffff;
+}
+
+.menu_desktop ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /*altura da linha*/
+    left: 0;   /*inicia em 0*/
+    width: 0; /*inicia em 0*/
+    height: 1px; /* espessura da linha */
+    background: linear-gradient(to right, transparent 0%, #B0E0E6 100%, transparent 100%); /*Configurei a opacidade da transição*/
+    opacity: 0; /* Inicialmente transparente */
+    transition: 300ms cubic-bezier(0.17, 0.67, 0.55, 1.20); /*configurei a transição*/
+}
+
+.menu_desktop ul li a:hover::after {
+    
+    width: 100%; /* expandir a largura da linha ao passar o mouse */
+    opacity: 1; 
+}
+
+/*VL*/
+
+.logo {
+    margin-left: 90px; 
+}
+
+.logo a {
+    color: #00d2df; /* Cor azul */
+    transition: 0.4s; /* Transição */
+    font-size: 39px;
+    text-shadow: 0 0 15px #00d2df;
+  }
+  
+  .logo a:hover {
+    color: rgba(147, 88, 247, 1);
+    text-shadow: 0 0 15px #fce6ff;
+  }
+
+  
+/*TOPO DO SITE*/
+section.topo_site {
+    padding: 300px 15%;
+} 
+
+section.topo_site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 215px;
+} 
+
+.topo_site h1{
+    color: #D9D9D9;
+    font-size: 62px;
+    line-height: 80px;
+    white-space: nowrap; /*linha unica*/
+}
+
+.topo_site h1 span {
+    color: #B10DC9;
+}
+
+.topo_site .texto_topo p{
+    color: #00d2df;
+    margin-right: 40px 0;
+    font-size: 37px;
+    text-shadow: 0 0 15px #00d2df;
+    white-space: nowrap; /*linha unica*/
+}
+
+/* ICONE DOS CONTATOS  */
+.contatos{
+    margin-top: 10px;
+}
+
+.contatos ul{
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.contatos ul li{
+    width: 60px;
+    height: 60px; 
+    background-color: #3b3b3b;
+    border-radius: 10px;
+    border: 3px solid #4F2A54;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+.contatos ul li:hover {
+    border-color: #00d2df;
+}
+
+.contatos ul li i{
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 50px; 
+}
+
+/* IMAGEM */
+.topo_site .img_topo img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate; /*periodo de 2 seg suave e infinita alternando do 0 ao 100*/
+}
+
+/*criando o efeito imagem*/
+@keyframes flutuar {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+.scroll {
+    position:absolute;
+    bottom: 45px;
+    width: 200px;
+    text-align: center;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+}
+  
+.scroll p {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+.scroll img {
+    width: 50px;
+}
+
+
+/* AQUI INICIA TECNOLOGIAS  */
+.tecnologias {
+    padding: 120px 15%;
+    margin-top: 260px; /* Defina a distância desejada entre a sessão de Tecnologias e o topo */
+
+}
+
+.tecnologias .flex{
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.tecnologias h1 {
+    color: #D9D9D9;
+    font-size: 36px;
+    margin-bottom: 100px;
+    margin-top: 0; 
+    text-align: left; 
+}
+
+
+.tecnologias .areas {
+    cursor: pointer;
+}
+
+.tecnologias .areas ul {
+    list-style: none;
+    font-size: 17.6px;
+    color:#ffffff;
+}
+
+.tecnologias .areas li {
+    padding: 15px;
+    text-align: center;
+    border-left: 2px solid #B10DC9;
+    transition: background-color border-left 0.5s ease;
+}
+
+
+.tecnologias .areas ul li.clicked,
+.tecnologias .areas ul li:hover {
+    background-color: #424242;
+    border-left: 2px solid #00d2df;
+}
+
+.tecnologias .areas {
+    width: 20%;
+    line-height: 24px;
+}
+
+.tecnologias .areas section {
+    display: none;
+}
+
+
+.tecnologias .areas section.active {
+    display: block;
+}
+
+.tecnologias .areas section.active img {
+    display: block;
+}
+
+.tecnologias .areas section img {
+    display: none; /* Ocultar todas as imagens por padrão */
+    width: 100px; /* Definir largura das imagens */
+}
+.tecnologias .areas section.active h2{
+    display: block;
+    color: #fff; /* Altere a cor do texto conforme necessário */
+    font-size: 24px; /* Altere o tamanho da fonte conforme necessário */
+    margin-bottom: 20px; /* Adicione margem inferior conforme necessário */
+}
+
+.tecnologias .areas section.active.mostrar{
+animation: 0.5s forwards show-right;
+}
+
+@keyframes mostrar {
+    from {
+      opacity: 0;
+      transform: translate3d(-30px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
