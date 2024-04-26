@@ -71,45 +71,61 @@
             </div><!--interface -->
         </section><!--topo do site-->
 
-        <section class="tecnologias" id="tecnologias">
-            <div class="interface"> <!-- Corrigido aqui -->
-                <h1>Tecnologias</h1>
-                
-                <div class="flex">
-                    <section class="areas">
-                        <ul data-tab="nome_areas">
-                            <li data-target="front" class="clicked">Front-End</li>
-                            <li data-target="back">Back-End</li>
-                            <li data-target="dataA">Data Analysis</li>
-                        </ul><!--nome das areas -->
-                    </section><!--areas -->
-                    <div class="logos" data-tab="descricao">
-        
-                        <section data-anime="mostrar" id="front"  class="active">
-                            <h2>Front-End</h2>
-                            <img src="assets/logos/front/bootstrap.png">
-                            <img src="assets/logos/front/css.png">
-                            <img src="assets/logos/front/html.png">
-                            <img src="assets/logos/front/js.png">
-                        </section>
-                        <section id="back">
-                            <h2>Back-End</h2>
-                            <img src="assets/logos/back/c-.png">
-                            <img src="assets/logos/back/java.png">
-                            <img src="assets/logos/back/python.png">
-                        </section>
-                        <section id="dataA">
-                            <h2>Data Analysis</h2>
-                            <img src="assets/logos/dataA/mongodb.png">
-                            <img src="assets/logos/dataA/mysql.png">
-                            <img src="assets/logos/dataA/powerbi.png">
-                            <img src="assets/logos/dataA/python.png">
-                        </section>
-        
-                    </div>
-                </div><!--flex -->
-            </div><!--interface -->
-        </section><!--tecnologias-->
+ <section class="tecnologias" id="tecnologias" data-anime="js-scroll">
+        <h1>Tecnologias</h1>
+         <div class="interface">
+            <div class="flex">
+            <!-- Áreas de Tecnologia -->
+            <section class="areas">
+                <ul data-tab="nome_areas">
+                    <li data-target="front">Front-End</li>
+                    <li data-target="back">Back-End</li>
+                    <li data-target="dataA">Data Analysis</li>
+                </ul><!-- nome das areas -->
+            </section><!-- areas -->
+
+            <!-- Logos das Tecnologias -->
+            <div class="descricao" data-tab="content">
+                <section id="front"data-anime="show-right">
+                    <div class="titulo"><h2>Front-End</h2></div>
+                    <div class="img">
+                    <img src="assets/logos/front/bootstrap.png">
+                    <img src="assets/logos/front/css.png">
+                    <img src="assets/logos/front/html.png">
+                    <img src="assets/logos/front/js.png">
+                </div>
+                <div class="texto">
+                    <p>TEXTO VEM AQUI</p>
+                </div>
+                </section>
+                <section id="back" data-anime="show-right">
+                    <div class="titulo"><h2>Back-End</h2></div>
+                    <div class="img">
+                    <img src="assets/logos/back/c-.png">
+                    <img src="assets/logos/back/java.png">
+                    <img src="assets/logos/back/python.png">
+                </div>
+                <div class="texto">
+                    <p>TEXTO VEM AQUI</p>
+                </div>
+                </section>
+                <section id="dataA" data-anime="show-right">
+                    <div class="titulo"><h2>Data Analysis</h2></div>
+                    <div class="img">
+                    <img src="assets/logos/dataA/mongodb.png">
+                    <img src="assets/logos/dataA/mysql.png">
+                    <img src="assets/logos/dataA/powerbi.png">
+                    <img src="assets/logos/dataA/python.png">
+                </div>
+                <div class="texto">
+                    <p>TEXTO VEM AQUI</p>
+                </div>
+                </section>
+            </div><!-- /logos -->
+        </div><!-- /flex -->
+    </div><!-- /interface -->
+</section><!-- /tecnologias -->
+
         
     </main>
     
