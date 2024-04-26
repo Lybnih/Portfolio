@@ -13,7 +13,7 @@ body{
 }
 
 .interface{
-    max-width: 1500px; /*separando*/
+    max-width: 15000px; /*separando*/
     margin: 0 auto;
 }
 
@@ -38,7 +38,6 @@ header > .interface{
     display: flex;
     align-items:center;
     justify-content: space-between; /*ficou separado*/
-    padding-right: 120px; 
 }
 
 header a{
@@ -48,7 +47,7 @@ header a{
 
 header nav ul{
     list-style-type: none; /*tirei os pontos da lista do menu*/
-    margin-right: 2px; /* Adição */
+    margin-right: 249px; /* Adição */
 }
 
 header nav ul li{
@@ -58,11 +57,67 @@ header nav ul li{
 
 .menu_desktop {
     flex: 1;
-    text-align: right; /*ALINHAdOS A DIREITA*/
+    text-align: right;
+    margin-right: 20px; /* Adicione a margem à direita */
 }
 
 /* AQUI VEM O SWITCH DE TEMA */
 
+.switch {
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* esconde o input do html */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /*slider*/
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #B10DC9;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  /*slider antes(BOLINHA)*/
+  .slider:before {
+    position: absolute; 
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  /*CHECKBOX MARCADO*/
+  .switch input:checked + .slider {
+    background: #c07ece;
+  }
+  
+  .switch input:focus + .slider {
+    box-shadow: 0 0 1px #b84fce;
+  }
+  /*SWITCH LIGADO*/
+  .switch input:checked + .slider:before {
+    transform: translateX(1.6em);
+    width: 2em;
+    height: 2em;
+    bottom: 0;
+  }
 /* AQUI ENCERRA O SWITCH DE TEMA  */  
 
 .menu_desktop ul li a {
@@ -239,7 +294,7 @@ section.topo_site .flex{
 
 .areas ul li.active{
     background-color: #3d3d3d;
-    border-left: 2px solid #00d2df;
+    border-left: 3px solid #00d2df;
     font-weight: 600;
 }
 
@@ -257,10 +312,11 @@ section.topo_site .flex{
 
 /*descricao*/
 .descricao {
-    width: 60%;
+    width: 100%;
+    margin-top: 9px;
     margin-left: 5rem;
     position: relative;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
 }
 
 .descricao .titulo{
@@ -268,7 +324,8 @@ section.topo_site .flex{
 }
 
 .descricao section {
-    display: none;
+    display: flex;
+    align-items: flex-start;
 }
   
 .descricao section.active {
@@ -287,15 +344,28 @@ section.topo_site .flex{
 .descricao .img{
     font-size: 0.95rem;
     position: absolute;
-    right: 0;
-    top: 5px;
+    right: 3px;
+    top: 20px;
     font-weight: bold;
+}
+
+.descricao .img img {
+    margin-bottom: 10px; 
+    margin-left: 20px;
+    margin-top: 97px;
+}
+
+.descricao .texto{
+    margin-right: 295px;
+    
 }
 
 .texto {
     margin: 2rem 0;
     font-size: 0.85rem;
-    color: #f3f3f3 ;
+    color: #e9e9e9 ;
+    word-wrap: break-word;
+    gap: 50px;
 }
 
 @keyframes show-right {
@@ -327,8 +397,6 @@ section.topo_site .flex{
     background-color: #3d3d3d;
     border-left: 2px solid #00d2df;
 }
-
-
 
 
 
