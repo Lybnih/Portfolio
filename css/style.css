@@ -13,7 +13,7 @@ body{
 }
 
 .interface{
-    max-width: 15000px; /*separando*/
+    max-width: 1500px; /*separando*/
     margin: 0 auto;
 }
 
@@ -132,7 +132,7 @@ header nav ul li{
     bottom: -5px; /*altura da linha*/
     left: 0;   /*inicia em 0*/
     width: 0; /*inicia em 0*/
-    height: 1px;
+    height: 2px;
     background: linear-gradient(to right, transparent 0%, #B0E0E6 100%, transparent 100%); /*Configurei a opacidade da transição*/
     opacity: 0; /* Inicialmente transparente */
     transition: 300ms cubic-bezier(0.17, 0.67, 0.55, 1.20); /*configurei a transição*/
@@ -164,7 +164,7 @@ header nav ul li{
   
 /*TOPO DO SITE*/
 section.topo_site {
-    padding: 300px 15%;
+    padding: 350px 20%;
 } 
 
 section.topo_site .flex{
@@ -194,35 +194,77 @@ section.topo_site .flex{
 
 /* ICONE DOS CONTATOS  */
 .contatos{
-    margin-top: 10px;
+    margin-top: 35px;
 }
 
-.contatos ul{
-    list-style-type: none;
+.example-2 {
     display: flex;
-    gap: 25px;
-}
-
-.contatos ul li{
-    width: 60px;
-    height: 60px; 
-    background-color: #3b3b3b;
-    border-radius: 10px;
-    border: 3px solid #4F2A54;
+    list-style: none;
+  }
+  
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  
+  .example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+  }
+  
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: border-color 0.3s ease;
-}
-.contatos ul li:hover {
-    border-color: #00d2df;
-}
-
-.contatos ul li i{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     color: #ffffff;
-    font-size: 40px;
-    line-height: 50px; 
-}
+    background-color: rgba(147, 88, 247, 1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .example-2 .icon-content a i {
+    position: relative;
+    z-index: 1;
+    font-size: 30px;
+  }
+  
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
+  
+  .example-2 .icon-content a[data-social="linkedin"] .filled,
+  .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+    background: linear-gradient(45.3deg, #00d2df 10.8%,rgba(99, 88, 238, 1) 50%);
+  }
+  
+  .example-2 .icon-content a[data-social="github"] .filled,
+  .example-2 .icon-content a[data-social="github"] ~ .tooltip {
+    background: linear-gradient(45.3deg, #00d2df 10.8%,rgba(99, 88, 238, 1) 50%);
+  }
+  
+  .example-2 .icon-content a[data-social="gmail"] .filled,
+  .example-2 .icon-content a[data-social="gmail"] ~ .tooltip {
+    background: linear-gradient(45.3deg, #00d2df 10.8%,rgba(99, 88, 238, 1) 50%);
+  }
+
+  
 
 /* IMAGEM */
 .topo_site .img_topo img{
@@ -261,10 +303,186 @@ section.topo_site .flex{
 }
 
 
-/* AQUI INICIA TECNOLOGIAS  */
+/* AQUI INICIA SOBRE  */
+section.sobre{
+    padding: 300px 20%;
+    background-color: #131313;
+}
 
+section.sobre .flex{
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre .texto-sobre{
+    color: #ffffff;
+}
+
+.sobre .texto-sobre h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .texto-sobre p{
+    margin: 20px 0;
+    text-align: justify;
+}
+
+/*botão para o curriculo*/
+.btn{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.button-cv button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: rgba(99, 88, 238, 1);
+    background-size: 100%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.button-cv a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.button-cv:hover::before {
+    transform: scaleX(1);
+}
+
+.button-cv .button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button-cv button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(
+      82.3deg,
+      #00d2df 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+}
+
+.texto-sobre .btn .button-cv {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: rgba(99, 88, 238, 1);
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 50%;
+}
+
+.texto-sobre .btn .button-cv:hover::before {
+    transform: scaleX(1);
+}
+
+.texto-sobre .btn .button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.texto-sobre .btn .button-cv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(
+        82.3deg,
+        #00d2df 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+}
+
+/* botão para WhatsApp */
+.texto-sobre .btn .button-W {
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #ececec;
+    cursor: pointer;
+    background-size: 100%;
+    color: #000000;
+    z-index: 1;
+    text-align: center; 
+    line-height: 3rem;
+}
+
+.texto-sobre .btn .button-W:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.texto-sobre .btn .button-W:hover {
+    color: #ffffff;
+    border: 1px solid #009087;
+}
+
+.texto-sobre .btn .button-W:hover:before {
+    top: -35%;
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.texto-sobre .btn .button-W:hover:after {
+    background-color: #009087;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/*logo whats*/
+.bi-whatsapp {
+    color: #25D366; /* Verde do WhatsApp */
+}
+/* AQUI ACABA SOBRE  */
+
+
+/* AQUI INICIA TECNOLOGIAS  */
 .tecnologias {
-    padding: 120px 20%;
+    padding: 300px 20%;
 }
 
 .tecnologias .interface .flex {
@@ -275,14 +493,14 @@ section.topo_site .flex{
 .tecnologias h1 {
     color: #D9D9D9;
     font-size: 36px;
-    margin-bottom: 100px;
+    margin-bottom: 5%;
     margin-top: 0; 
     text-align: left; 
 }
 
 /*areas*/
 .areas{
-    width: 225px;
+    width: 342px;
     cursor: pointer;
 }
 
@@ -314,7 +532,7 @@ section.topo_site .flex{
 .descricao {
     width: 100%;
     margin-top: 9px;
-    margin-left: 5rem;
+    margin-left: 10px;
     position: relative;
     line-height: 1.7rem;
 }
@@ -332,7 +550,7 @@ section.topo_site .flex{
     display: block;
 }
 
-.descricao section.active.show-right {
+.descricao section.active .show-right {
     animation: 0.5s forwards show-right;
 }
 
@@ -345,7 +563,7 @@ section.topo_site .flex{
     font-size: 0.95rem;
     position: absolute;
     right: 3px;
-    top: 20px;
+    top: 60px;
     font-weight: bold;
 }
 
@@ -357,15 +575,15 @@ section.topo_site .flex{
 
 .descricao .texto{
     margin-right: 295px;
-    
+    gap: 50px;
 }
 
 .texto {
     margin: 2rem 0;
-    font-size: 0.85rem;
     color: #e9e9e9 ;
     word-wrap: break-word;
-    gap: 50px;
+    
+    text-align: justify;
 }
 
 @keyframes show-right {
