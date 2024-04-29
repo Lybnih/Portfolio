@@ -58,7 +58,6 @@ header nav ul li{
 .menu_desktop {
     flex: 1;
     text-align: right;
-    margin-right: 20px; /* Adicione a margem à direita */
 }
 
 /* AQUI VEM O SWITCH DE TEMA */
@@ -283,27 +282,36 @@ section.topo_site .flex{
 }
 
 .scroll {
-    position:absolute;
-    bottom: 45px;
-    width: 200px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    display: flex;
+    width: 200px;
+    bottom: 0;
+}
+
+.scroll a {
+    text-decoration: none;
     display: flex; 
     align-items: center;
-    justify-content: center; 
 }
-  
+
 .scroll p {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
+    margin-right: 5px; 
 }
-  
+
 .scroll img {
     width: 50px;
 }
 
 
 /* AQUI INICIA SOBRE  */
+
+
 section.sobre{
     padding: 300px 20%;
     background-color: #131313;
@@ -312,6 +320,14 @@ section.sobre{
 section.sobre .flex{
     align-items: center;
     gap: 50px;
+}
+
+.sobre h1 {
+    color: #D9D9D9;
+    font-size: 36px;
+    margin-bottom: 5%;
+    margin-top: 0; 
+    text-align: left; 
 }
 
 .sobre .texto-sobre{
@@ -615,9 +631,5 @@ section.sobre .flex{
     background-color: #3d3d3d;
     border-left: 2px solid #00d2df;
 }
-
-
-
-
 
 

@@ -19,16 +19,16 @@
         <div class="interface">
             <div class="logo">
                 <p>
-                    <a href="#">‹VL/›</a>
+                    <a href="#topo-site">‹VL/›</a>
                 </p>
             </div> <!--logo -->
 
             <nav class="menu_desktop" id="menu_desktop" >
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre mim</a></li>
-                    <li><a href="#">Projetos</a></li>
-                    <li><a href="#">Tecnologias</a></li>
+                    <li><a href="#topo-site">Início</a></li>
+                    <li><a href="#sobre">Sobre mim</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
                 </ul>
             </nav>
 
@@ -44,9 +44,8 @@
         
     </header>
     
-
     <main>
-        <section class="topo_site">
+        <section id="topo-site" class="topo_site">
             <div class="interface">
                 <div class="flex">
                     <div class="texto_topo">
@@ -83,15 +82,18 @@
                         <img src="assets//topo/gatinho.png" alt="vai a fotenha">
 
                     </div> <!--Imagem do topo-->
-                    <div class="scroll">
+                    <div class="scroll" data-menu="suave">
+                    <a href="#sobre"> 
                         <p>scroll down</p>
-                        <img src="assets/topo/scroll.gif">
+                        <img src="assets/topo/scroll.gif" >
+                    </a>
                     </div> <!--scroll-->
                 </div> <!--flex -->
             </div><!--interface -->
         </section><!--topo do site-->
 
-        <section class="sobre">
+        <section id="sobre" class="sobre">
+            <h1>Sobre Mim</h1>
             <div class="interface">
                 <div class="flex">
 
@@ -121,7 +123,7 @@
             </div><!--interface -->
         </section><!--sobre-->
 
- <section class="tecnologias" id="tecnologias" data-anime="js-scroll">
+        <section class="tecnologias" id="tecnologias" data-anime="js-scroll_menu">
         <h1>Tecnologias</h1>
          <div class="interface">
             <div class="flex">
@@ -174,11 +176,11 @@
             </div><!-- descricao -->
         </div><!-- /flex -->
     </div><!-- /interface -->
-</section><!-- /tecnologias -->
+        </section><!-- /tecnologias -->
 
         
     </main>
-    
+    <script src="js/scroll_geral.js"></script>
     <script src="js/tecnologias.js"></script>
     <script src="js/scroll_menu.js"></script>
 </body>

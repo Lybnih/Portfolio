@@ -16,5 +16,8 @@ export default function initScrollSuave() {
     })
 }
 
-// Chame a função para inicializar o scroll suave
+// Chama a função para inicializar o scroll suave
 initScrollSuave();
+
+
+
