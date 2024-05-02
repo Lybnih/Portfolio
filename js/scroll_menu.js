@@ -13,7 +13,7 @@ export default function initScrollSuave() {
     
     linksInternos.forEach((link) => {
         link.addEventListener('click', scrollToSection)
-    })
+    });
 }
 
 // Chama a função para inicializar o scroll suave

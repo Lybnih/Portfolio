@@ -28,11 +28,11 @@ header {
     position: fixed; /*vai descer junto*/
     top: 0; /* fica no topo de inincio */
     z-index: 1000; /*cima de outros elementos */
-    background-color: #272727;
+    background-color: rgba(49, 49, 49, 0.6); /* Cor de fundo com transparência */
+    backdrop-filter: blur(10px);
     width: 100%;
     box-shadow: 0px 2px 5px rgba(147, 88, 247, 1); /* Adicionei uma sombra ao cabeçalho para separá-lo do conteúdo */
 }
-
 
 header > .interface{
     display: flex;
@@ -163,7 +163,8 @@ header nav ul li{
   
 /*TOPO DO SITE*/
 section.topo_site {
-    padding: 350px 20%;
+    padding: 260px 20%;
+
 } 
 
 section.topo_site .flex{
@@ -189,6 +190,73 @@ section.topo_site .flex{
     font-size: 37px;
     text-shadow: 0 0 15px #00d2df;
     white-space: nowrap; /*linha unica*/
+}
+
+.topo_site .texto_topo p span{
+    position:relative
+}
+
+.topo_site .texto_topo p span::before{
+    content: "";
+    color: #00d2df;
+    animation: animacao-palavra 20s infinite;
+}
+
+.topo_site .texto_topo p span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #00d2df;
+    right: -10px;
+    opacity: 1;
+    animation: cursor .9s infinite, digita 40s steps(15) infinite;
+    width: calc(100% + 10px);
+    background-color: #181A1C;
+}
+
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 10px);
+    }
+
+}
+@keyframes cursor {
+    0%{
+        border-left: 2px solid #181A1C;
+    }
+}
+
+@keyframes animacao-palavra {
+    0%, 30%{
+        content: "Desenvolvedora Front-End";
+    }
+    31%, 60%{
+        content: "Desenvolvedora Front-End";
+    }
+    61%, 100%{
+        content: "Desenvolvedora Front-End";
+    }
+}
+
+hr {
+    border: none; 
+    height: 2px;
+    background: linear-gradient(to left, #00d2df, #B10DC9, rgba(99, 88, 238, 1));
+    background-size: 500% 100%;
+    animation: degrade-animado 7s infinite alternate;
+    margin: 10px 0;
+}
+
+@keyframes degrade-animado {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
 }
 
 /* ICONE DOS CONTATOS  */
@@ -289,6 +357,7 @@ section.topo_site .flex{
     display: flex;
     width: 200px;
     bottom: 0;
+    margin-bottom: 25px;
 }
 
 .scroll a {
@@ -314,7 +383,9 @@ section.topo_site .flex{
 
 section.sobre{
     padding: 300px 20%;
-    background-color: #131313;
+    /*background-color: #131313;*/
+    background-image: linear-gradient(to bottom, #181A1C, #2b0c3a, #181A1C); /* Cria um degradê onde o meio é a segunda cor */
+
 }
 
 section.sobre .flex{
@@ -514,12 +585,15 @@ section.sobre .flex{
 }
 
 
+
 /* AQUI ACABA PROJETOS*/
 
 
 /* AQUI INICIA TECNOLOGIAS  */
 .tecnologias {
     padding: 300px 20%;
+    background-image: linear-gradient(to bottom, #181A1C, #2b0c3a, #181A1C); /* Cria um degradê onde o meio é a segunda cor */
+
 }
 
 .tecnologias .interface .flex {
@@ -548,7 +622,7 @@ section.sobre .flex{
 }
 
 .areas ul li.active{
-    background-color: #3d3d3d;
+    background-color: #6b6b6bbd;
     border-left: 3px solid #00d2df;
     font-weight: 600;
 }
@@ -562,7 +636,7 @@ section.sobre .flex{
 }
 
 .areas ul li:hover {
-    background-color: #3d3d3d;
+    background-color: #6b6b6bbd;
 }
 
 /*descricao*/
@@ -649,7 +723,7 @@ section.sobre .flex{
 
 .tecnologias .areas ul li.clicked,
 .tecnologias .areas ul li:hover {
-    background-color: #3d3d3d;
+    background-color: #6b6b6bbd;
     border-left: 2px solid #00d2df;
 }
 
