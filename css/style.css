@@ -728,3 +728,42 @@ section.sobre .flex{
 }
 
 /* AQUI ACABA TECNOLOGIAS  */
+
+/*AQUI COMEÇA O FOOTER*/
+
+footer {
+    width: 100%;
+    position: absolute;
+    background: #a7a7a718;
+    color: #ffffff;
+    padding: 100px, 0 30px;
+    font-size: 13px;
+    line-height: 10px;
+    text-align: center; 
+}
+
+.linha {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+.contatos {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.email,
+.numero {
+    margin: 9px 0; 
+}
+
+.direitos {
+    margin-top: 20px;
+}
+
+
+/*AQUI ACABA O FOOTER*/
