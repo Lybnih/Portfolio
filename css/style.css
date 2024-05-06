@@ -382,7 +382,7 @@ hr {
 
 
 section.sobre{
-    padding: 300px 20%;
+    padding: 150px 20%;
     /*background-color: #131313;*/
     background-image: linear-gradient(to bottom, #181A1C, #2b0c3a, #181A1C); /* Cria um degradê onde o meio é a segunda cor */
 
@@ -570,8 +570,7 @@ section.sobre .flex{
 
 /* AQUI INICIA PROJETOS*/
 .projetos {
-    padding: 300px 20%;
-    
+    padding: 200px 20% 300px 20%;;
 }
 
 .projetos .interface .flex {
@@ -658,7 +657,7 @@ section.sobre .flex{
 
 /* AQUI INICIA TECNOLOGIAS  */
 .tecnologias {
-    padding: 300px 20%;
+    padding: 150px 20% 20px;
     background-image: linear-gradient(to bottom, #181A1C, #2b0c3a, #181A1C); /* Cria um degradê onde o meio é a segunda cor */
 }
 
