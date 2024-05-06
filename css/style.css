@@ -418,6 +418,15 @@ section.sobre .flex{
     line-height: 2rem;
 }
 
+.img-sobre img {
+    border-left: 2px solid;
+    padding-left: 3px; 
+    border-radius: 5px;
+    background: linear-gradient(to left, #00d2df, #B10DC9, rgba(99, 88, 238, 1));
+    background-size: 500% 100%;
+    animation: degrade-animado 6s infinite alternate;
+}
+
 /*botão para o curriculo*/
 .btn{
     margin-top: 30px;
