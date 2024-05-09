@@ -390,7 +390,7 @@ section.sobre{
 
 section.sobre .flex{
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .sobre h1 {
@@ -402,7 +402,7 @@ section.sobre .flex{
 }
 
 .sobre .texto-sobre{
-    color: #ffffff;
+    color: #eeeeee;
 }
 
 .sobre .texto-sobre h2{
@@ -414,8 +414,8 @@ section.sobre .flex{
 .sobre .texto-sobre p{
     margin: 20px 0;
     text-align: justify;
-    font-size:  1rem;
-    line-height: 2rem;
+    font-size:  1.2rem;
+    line-height: 1.5rem;
 }
 
 .img-sobre img {
