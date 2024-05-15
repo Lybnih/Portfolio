@@ -774,7 +774,7 @@ section.sobre .flex{
 
 .areas ul {
     list-style: none;
-    font-size: 1.1rem;
+    font-size: 1.rem;
     padding: 0;
 }
 
@@ -945,71 +945,127 @@ footer {
     color: #ffffff; 
 }
 
-@media screen and (max-width: 1024px) {
+
+/*Deixando rsponsivo*/
+@media screen and (max-width: 1024px) and (max-width: 768px) {
 
     /*classes gerais*/
     .flex{
         flex-direction: column;
+        gap: 20px;
     }
     /*cabeçalho*/
     header nav ul {
         display: none; /* Oculta o menu de navegação em telas menores que 1024px */
     }
-
-    /*topo do site*/
-    .topo_site h1{
-        font-size: 32px;
-        line-height: 80px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    
-      /* Exceção: footer mantém espaçamento original */
-      footer {
-        padding: 100px 0 30px; 
+    .logo {
+        margin-left: 16px;  /* Ajuste o valor conforme necessário */
       }
 
-    .topo_site {
-      padding: 100px 20%; /* Reduz o padding superior */
+    /*TOPO DO SITE*/
+    section.topo_site{
+        padding: 150px 20%;
     }
-  
-    .topo_site .flex {
-      flex-direction: column; /* Organiza os elementos em coluna */
-      gap: 20px; /* Ajusta o espaçamento entre os elementos */
+    section.topo_site .flex{
+        gap: 21px;
     }
-
+    
     .topo_site .img_topo img {
         margin: 0 auto;
         display: block;
         max-width: 100%; 
 
-      }
-  
+    }
+
     .topo_site .texto_topo p {
-      font-size: 20px; /* Diminui o tamanho do texto */
+        font-size: 20px; /* Diminui o tamanho do texto */
+      }
+    .topo_site h1{
+        font-size: 32px;
+        line-height: 80px;
     }
 
-    .projetos {
-      padding: 100px 20% 100px 20%; /* Reduz o padding inferior */
+    .scroll {
+        position: static;
+        bottom: 0;
+        margin-bottom: 0;
+        margin-top: 100px;
     }
+    /*ACABA TOPO DO SITE*/
+
+    /*SOBRE */
+    section.sobre {
+        padding: 10px 20%;
+    }
+
+    .sobre .texto-sobre h2{
+        line-height: 35px;
+    }
+
+    .texto-sobre .btn .button-cv {
+        margin-right: 20px;  /* Diminua a margem direita */
+    }
+    .texto-sobre .btn {
+        flex-direction: column; /* Botões em coluna */
+        align-items: center;   /* Centraliza os botões */
+    }
+      .texto-sobre .btn .button-cv {
+        margin-right: 0;       /* Remove a margem direita */
+        margin-bottom: 10px;   /* Adiciona espaçamento entre os botões */
+    }
+
+
+    /*AQUI ACABA SOBRE*/
+    /*PROJETOS*/
+    section.projetos {
+        padding: 20px 20%;
     
-    .cards-geral {
-      grid-template-columns: 1fr; /* Exibe os cards em uma única coluna */
-    }
+    } 
+    .projetos {
+        padding: 100px 20% 100px 12%; 
+      }
 
-    .tecnologias .interface .flex {
-        flex-direction: column; /* Muda para layout de coluna */
+      .projetos .cards-geral {
+        grid-template-columns: 1fr; /* Uma coluna para dispositivos móveis */
+        gap: 2%;
+        margin: auto;
       }
     
+      .projetos__card p { 
+        display: none; /* Oculta a descrição do projeto */
+      }
+    
+      .projetos__card h2 {
+        margin-bottom: 15px; /* Espaçamento entre título e imagem */
+      }
+    /*ACABA PROJETOS*/
+
+    /*TECNOLOGIAS*/
+    section.projetos {
+        padding: 100px 20%;
+    
+    } 
+    .tecnologias {
+        height: auto; 
+    }
+    .tecnologias .interface .flex {
+        flex-direction: column; 
+      }
+
+      .areas{
+        width: 220px;
+        cursor: pointer;
+    }
+
       .descricao {
         margin-top: 20px;
         width: 100%; /* Ocupa a largura total da tela */
         margin-left: 0; 
       }
-    
+
       .descricao .texto {
-        margin-right: 0; /* Remove a margem direita */
+        margin-right: 0; 
+        letter-spacing: -0.2px; 
       }
     
       .descricao .img {
@@ -1017,9 +1073,16 @@ footer {
         text-align: center; /* Centraliza as imagens */
         margin-top: 20px; 
       }
-    
       .descricao .img img {
-        margin: 0; /* Remove as margens */
-        max-width: 50%; /* Define largura máxima para as imagens */
+        margin: 0;
+        max-width: 50%; 
       }
-  }
+ 
+    /*ACABA TECNOLOGIAS*/
+
+    /* footer */
+    footer {
+        padding: 100px 0 30px; 
+      }
+}
+/*acaba o responsivo*/
