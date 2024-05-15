@@ -10,6 +10,7 @@ body{
     background-color: #181A1C;
     height: 100vh;
     margin: 0;
+    scrollbar-width: thin;
 }
 
 .interface{
@@ -62,7 +63,7 @@ header nav ul li{
 
 /* AQUI VEM O SWITCH DE TEMA */
 
-.switch {
+.trilho{
     font-size: 16px;
     position: relative;
     display: flex;
@@ -71,7 +72,7 @@ header nav ul li{
   }
   
   /* esconde o input do html */
-  .switch input {
+  .trilho input {
     opacity: 0;
     width: 0;
     height: 0;
@@ -103,20 +104,101 @@ header nav ul li{
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   /*CHECKBOX MARCADO*/
-  .switch input:checked + .slider {
+  .trilho input:checked + .slider {
     background: #c07ece;
   }
   
-  .switch input:focus + .slider {
+  .trilho input:focus + .slider {
     box-shadow: 0 0 1px #b84fce;
   }
   /*SWITCH LIGADO*/
-  .switch input:checked + .slider:before {
+  .trilho input:checked + .slider:before {
     transform: translateX(1.6em);
     width: 2em;
     height: 2em;
     bottom: 0;
   }
+  
+  body.claro{
+    background-color: #f7fdff;
+    color: #000000; 
+   
+    section.sobre,
+    section.tecnologias {
+        background-image: linear-gradient(to bottom, #f7fdff,#86d9ee, #f7fdff); /* Fundo gradiente claro */
+    }
+
+    header {
+        background-color: rgba(189, 189, 189, 0.8); /* Fundo do cabeçalho com transparência */
+    }
+
+    .menu_desktop ul li a,
+    .topo_site h1,
+    .topo_site .texto_topo p,
+    .texto-sobre,
+    .areas ul li,
+    .areas ul li.active,
+    .areas ul li:hover,
+    .descricao .titulo,
+    p,
+    h2,
+    .texto,
+    .texto_topo h1{
+        color: #000000; /* Altera a cor do texto para preto */
+    }
+
+    footer p,
+    footer h2,
+    footer h3,
+    footer h4{
+        color: #e0e0e0;
+    }
+
+    .tecnologias h1,
+    .projetos h1,
+    .sobre h1{
+        color: #4b4b4b; /* Altera a cor do texto para preto */
+    }
+
+    .projetos__card-button {
+        background-color: #f7fdff; /* Altera a cor dos botões para roxo */
+        color: #000000; /* Altera a cor do texto dos botões para branco */
+    }
+
+    .projetos__card-button:hover {
+        background-color: #e0e0e0;
+        text-shadow: 1px 1px 3px #00d2df;
+    }
+
+    .logo a {
+        color: rgba(147, 88, 247, 1); /* Cor azul */
+        transition: 0.4s; /* Transição */
+        font-size: 39px;
+        text-shadow: 0 0 15px rgba(147, 88, 247, 1);
+    }
+      
+    .logo a:hover {
+        color: #00d2df;
+        text-shadow: 0 0 15px #fce6ff;
+    }
+
+    .topo_site .texto_topo p span::after{
+        background-color: #f7fdff;
+    }
+
+    .menu_desktop ul li a::after {
+        background: linear-gradient(to right, transparent 0%, rgba(147, 88, 247, 1)100%, transparent 100%); /*Configurei a opacidade da transição*/
+    }
+
+    .areas ul li.active{
+        background-color: rgba(189, 189, 189, 0.699);
+    }
+    
+    .areas ul li:hover {
+        background-color: rgba(189, 189, 189, 0.699);
+    }
+  }
+  
 /* AQUI ENCERRA O SWITCH DE TEMA  */  
 
 .menu_desktop ul li a {
@@ -842,3 +924,22 @@ footer {
 
 
 /*AQUI ACABA O FOOTER*/
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+/* Estilo*/
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to left, #00d2df, #B10DC9, rgba(99, 88, 238, 1));
+    background-size: 500% 100%;
+    animation: degrade-animado 6s infinite alternate;
+    border-radius: 50px;
+    border: 1px solid;
+}
+
+::selection {
+    background-color: #B10DC9; /* Cor de fundo da seleção */
+    color: #ffffff; /* Cor do texto selecionado */
+}
